@@ -1,8 +1,0 @@
-{
-    "scripts": {
-      "build": "vercel",
-      "test": "npm run lint && npm run unit-tests",
-      "deploy": "vercel --prod",
-      "checks": "npm run test && npm run deploy"
-    }
-  }

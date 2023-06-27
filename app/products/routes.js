@@ -5,9 +5,9 @@ const upload = multer({ dest: "uploads/" });
 const productcontroller=require('./controller')
 router.get("/product",productcontroller.data);
 router.get("/product/:id",productcontroller.data_id);
-router.post('/product/',upload.single('images'), productcontroller.upload_img)
-router.put('/product/:id',upload.single('images'), productcontroller.update)
-router.delete('/product/:id',upload.single('images'), productcontroller.destroy)
+router.post('/product/',upload.single('image_url'), productcontroller.upload_img)
+router.put('/product/:id',upload.single('image_url'), productcontroller.update)
+router.delete('/product/:id',productcontroller.destroy)
 
 
 
