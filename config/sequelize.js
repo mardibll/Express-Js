@@ -4,7 +4,7 @@ const sequelizeInstance = new Sequelize({
   database: "eduwork_cruds_v2",
   host: "localhost",
   username: "root",
-  password: "@135790eL",
+  password: "email",
   dialect: "mysql",
 });
 
