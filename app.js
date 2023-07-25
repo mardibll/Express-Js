@@ -34,13 +34,13 @@
 //   });
 // });
 // app.listen(3001, () => console.log("server: http://localhost:3001/api"));
-const express= require('express')
+import express from "express";
 const app = express();
 
 const route = express.Router();
 
 route.get("/", (req, res) => {
-  res.send("Halo, selamat datang di halaman utasaqdqwdwma!");
+  res.send("Halo, selamat datang di halaman utsqqwama!");
 });
 app.use(route);
 const port = 3000;
