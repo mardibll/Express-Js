@@ -1,15 +1,16 @@
-const router = require("express").Router();
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+import { Router } from "express";
+const router = Router();
+// import multer from "multer"
+// const upload = multer({ dest: "uploads/" });
 
-const productcontroller=require('./controller')
+import productcontroller from "./controller.js"
 router.get("/product",productcontroller.data);
-router.get("/product/:id",productcontroller.data_id);
-router.post('/product/',upload.single('image_url'), productcontroller.upload_img)
-router.put('/product/:id',upload.single('image_url'), productcontroller.update)
-router.delete('/product/:id',productcontroller.destroy)
+// router.get("/product/:id",productcontroller.data_id);
+// router.post('/product/',upload.single('image_url'), productcontroller.upload_img)
+// router.put('/product/:id',upload.single('image_url'), productcontroller.update)
+// router.delete('/product/:id',productcontroller.destroy)
 
-
+export default router;
 
 
 
@@ -93,4 +94,4 @@ router.delete('/product/:id',productcontroller.destroy)
 //   // req.file is the `avatar` file
 //   // req.body will hold the text fields, if there were any
 // })
-module.exports = router;
+// module.exports = router;

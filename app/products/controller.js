@@ -1,31 +1,39 @@
-const conenction = require("../../config/mysql");
-const path = require("path");
-const fs = require("fs");
+import conenction from '../../config/mysql.js'
+import path from 'path'
+import fs from "fs"
+
+conenction.connect((error) => {
+  if (error) {
+    console.error("Error connecting to database:", error);
+  } else {
+    console.log("Connection to database established successfully");
+    // Lakukan tindakan atau operasi lainnya setelah koneksi berhasil terhubung
+  }
+});
+// const data = (req, res) => {
+//   const {search}=req.query
+//   let exec={}
+//   if (search) {
+//     exec={
+//       sql: "SELECT * FROM products WHERE name LIKE ?",
+//       values:[`%${search}%`]
+//     }
+//   } else {
+//     exec={
+//       sql: "SELECT * FROM products "
+//     }
+//   }
+//   conenction.query(exec, _response(res));
+// };
 
 const data = (req, res) => {
-  const {search}=req.query
-  let exec={}
-  if (search) {
-    exec={
-      sql: "SELECT * FROM products WHERE name LIKE ?",
-      values:[`%${search}%`]
-    }
-  } else {
-    exec={
-      sql: "SELECT * FROM products "
-    }
-  }
-  conenction.query(exec, _response(res));
+  conenction.query(
+    {
+      sql: "SELECT * FROM products ",
+    },
+    _response(res)
+  );
 };
-
-// const data = (req, res) => {
-//   conenction.query(
-//     {
-//       sql: "SELECT * FROM products ",
-//     },
-//     _response(res)
-//   );
-// };
 
 const data_id = (req, res) => {
   conenction.query(
@@ -101,4 +109,4 @@ const _response = (res) => {
     }
   };
 };
-module.exports = { data, data_id, upload_img,update,destroy };
+export default { data, data_id, upload_img,update,destroy };

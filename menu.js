@@ -24,4 +24,4 @@ const product = {
     delet_data: "/v4/product/4",
   },
 };
-module.exports = product;
+export default product;
