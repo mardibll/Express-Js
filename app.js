@@ -1,5 +1,5 @@
-require("./config/mongose");
 var express = require("express");
+require("./config/mongose");
 const path = require("path");
 
 var app = express();
